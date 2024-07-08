@@ -15,6 +15,7 @@ const postRoute = require("./routes/posts");
 const commentRoute = require("./routes/comments");
 
 //database
+dotenv.config();
 
 const connectDB = async () => {
   try {
@@ -25,7 +26,7 @@ const connectDB = async () => {
   }
 };
 //MIDDLEWARES
-dotenv.config();
+
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
@@ -35,6 +36,11 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoute);
+
+// Root route
+app.get("/", (req, res) => {
+  res.send("Welcome to the Blogging Application API!");
+});
 
 //image upload
 const storage = multer.diskStorage({
