@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const cors = require("cors");
+// const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 
@@ -33,10 +33,10 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 // app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 const cors = require("cors");
 const allowedOrigins = [
-  "https://blog-pqnbleayf-shivam-nimjes-projects.vercel.app",
+  "https://blog-mm8l.onrender.com",
   "http://localhost:5173",
+  "*",
 ];
-
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
