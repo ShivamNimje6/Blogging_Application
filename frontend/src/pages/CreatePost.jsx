@@ -71,7 +71,7 @@ const CreatePost = () => {
 
     // Create post
     try {
-      const res = await axios.post(URL + "/api/posts/create", post, {
+      const res = await axios.post(URL + "/api/create/createPost", post, {
         withCredentials: true,
       });
 

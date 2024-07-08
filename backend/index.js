@@ -9,7 +9,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 
 const authRoute = require("./routes/auth");
-
+const createRoute = require("./routes/create");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const commentRoute = require("./routes/comments");
@@ -32,7 +32,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 //hellooooo
 // / Updated CORS setup
 const corsOptions = {
-  origin: " https://blogapp2-4oqroboo1-shivam-nimjes-projects.vercel.app",
+  origin: "https://blogapp2-kd9o44a7d-shivam-nimjes-projects.vercel.app ",
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -44,6 +44,8 @@ app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+app.use("/api/create", createRoute);
+
 app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoute);
 
