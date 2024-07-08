@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-// const cors = require("cors");
+const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 
@@ -30,25 +30,25 @@ const connectDB = async () => {
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 // app.use(cors({ origin: "https://blog-mm8l.onrender.com", credentials: true }));
-// app.use(cors({ origin: "http://localhost:5173", credentials: true }));
-const cors = require("cors");
-const allowedOrigins = [
-  "https://blog-mm8l.onrender.com",
-  "http://localhost:5173",
-  "*",
-];
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+// const cors = require("cors");
+// const allowedOrigins = [
+//   "https://blog-mm8l.onrender.com",
+//   "http://localhost:5173",
+//   "*",
+// ];
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
 
 // Use cors middleware
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
