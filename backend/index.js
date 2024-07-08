@@ -29,11 +29,10 @@ dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 // app.use(cors({ origin: "*", credentials: true }));
-
+//hellooooo
 // / Updated CORS setup
 const corsOptions = {
-  origin:
-    "https://blogging-application-p21kj2ik7-shivam-nimjes-projects.vercel.app",
+  origin: "*",
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
