@@ -15,7 +15,6 @@ const postRoute = require("./routes/posts");
 const commentRoute = require("./routes/comments");
 
 //database
-dotenv.config();
 
 const connectDB = async () => {
   try {
@@ -26,40 +25,16 @@ const connectDB = async () => {
   }
 };
 //MIDDLEWARES
-
+dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-// app.use(cors({ origin: "https://blog-mm8l.onrender.com", credentials: true }));
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
-// const cors = require("cors");
-// const allowedOrigins = [
-//   "https://blog-mm8l.onrender.com",
-//   "http://localhost:5173",
-//   "*",
-// ];
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   },
-// };
-
-// Use cors middleware
-// app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoute);
-
-// Root route
-app.get("/", (req, res) => {
-  res.send("Welcome to the Blogging Application API!");
-});
 
 //image upload
 const storage = multer.diskStorage({
