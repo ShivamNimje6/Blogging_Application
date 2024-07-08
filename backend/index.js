@@ -32,7 +32,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 //hellooooo
 // / Updated CORS setup
 const corsOptions = {
-  origin: "https://blogapp2-iobv92y6g-shivam-nimjes-projects.vercel.app",
+  origin: " https://blogapp2-4oqroboo1-shivam-nimjes-projects.vercel.app",
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
