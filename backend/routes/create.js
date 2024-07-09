@@ -11,7 +11,7 @@ const calculateReadingTime = (content) => {
 };
 
 // CREATE
-router.post("/createPost", verifyToken, async (req, res) => {
+router.post("/createPost", async (req, res) => {
   try {
     const { title, desc, photo, username, userId, categories } = req.body;
     const readingTime = calculateReadingTime(desc);
