@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="py-2 pb-6 text-center text-white bg-black text-sm">
-        All rights reserved @Blog Market 2023
+        All rights reserved @Bloggers Paradise 2024
       </p>
     </>
   );
