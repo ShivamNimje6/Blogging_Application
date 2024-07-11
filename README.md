@@ -13,4 +13,6 @@ shreya.sinha2022@vitstudent.ac.in
 
 Team ID:  -VjnMPEv9OzBZBUcEVTz_
 Github Repository Link: https://github.com/ShivamNimje6/Blogging_Application
+
+// It is recommended to use the Firefox browser to view our deployment.
 Deployment Link: https://blogapp3-5k6w31ue2-shivam-nimjes-projects.vercel.app
